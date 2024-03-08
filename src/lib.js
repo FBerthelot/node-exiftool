@@ -79,7 +79,7 @@ function execute(proc, command, commandNumber, args, noSplitArgs, encoding) {
             `-execute${commandNumber}`,
         ]
     )
-    if (process.env.DEBUG) {
+    if (process.env.DEBUG === 'true') {
         console.log(JSON.stringify(allArgs, null, 2))
     }
     allArgs.forEach(arg => writeStdIn(proc, arg, encoding))
